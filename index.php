@@ -11,6 +11,8 @@
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 $this->need('header.php');
 $this->widget('Widget_Contents_Post_Recent','pageSize=1')->to($index);
+
+
 ?>
     <style>
         .img_pic{
@@ -67,30 +69,11 @@ $this->widget('Widget_Contents_Post_Recent','pageSize=1')->to($index);
         <?php endwhile; ?>
     </div>
 
-<!--    <div style="display: none;">-->
-<!--        <div class="post">-->
-<!--            <a data-id="6643" href="https://isujin.com/6643" title="你走了真好，不然总担心你要走">-->
-<!--                <img width="680" height="440" src="https://isujin.com/wp-content/themes/Diaspora/timthumb/timthumb.php?src=https://isujin.com/wp-content/uploads/2018/11/wallhaven-672007-1.png" class="cover">-->
-<!--            </a>-->
-<!--            <div class="else">-->
-<!--                <p>十一月 24, 2018</p>-->
-<!--                <h3><a data-id="6643" class="posttitle" href="https://isujin.com/6643">你走了真好，不然总担心你要走</a></h3>-->
-<!--                <p>最近一次苏晴产生离婚的想法，是两个月以前，天桥下买煎饼的时候。-->
-<!---->
-<!--                    老公掏零钱，不小心从裤兜里掉落一...</p>-->
-<!--                <p class="here">-->
-<!--                    <span class="icon-letter">2941</span>-->
-<!--                    <span class="icon-view">29863</span>-->
-<!--                    <a href="javascript:;" class="likeThis" id="like-6643"><span class="icon-like"></span><span class="count">405</span></a>        </p>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-
     <div id="primary">
 <?php while($this->next()): ?>
         <div class="post">
             <a data-id="<?php $this->cid()?>" href="<?php $this->permalink() ?>" title="<?php $this->sticky(); $this->title() ?>">
-                <img width="680" height="440" src="http://bl.cc/usr/themes/Minibus/timthumb/timthumb.php?src=<?php if($this->fields->thumbnail) $this->fields->thumbnail(); else echo getThumbnail(); ?>" class="cover">
+                <img width="680" height="440" src="<?php echo 'http://'.$_SERVER['HTTP_HOST']?>/usr/themes/Minibus/timthumb/timthumb.php?src=<?php if($this->fields->thumbnail) $this->fields->thumbnail(); else echo getThumbnail(); ?>" class="cover">
             </a>
             <div class="else">
                 <p><?php //$this->category(' ',true,'无'); ?> <?php $this->date('F j, Y'); ?></p>

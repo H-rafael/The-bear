@@ -147,6 +147,7 @@ if(! isset($ALLOWED_SITES)){
 		'wx2.sbimg.cn',
 		'ws1.sinaimg.cn',
 		'wx1.sbimg.cn',
+		'qqexit.com',
 	);
 }
 // -------------------------------------------------------------
